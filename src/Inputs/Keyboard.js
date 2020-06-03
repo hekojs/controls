@@ -2,12 +2,20 @@ import keyboardKey from 'keyboard-key'
 import Events from 'events'
 
 export default class Keyboard {
-  constructor (ticker, mapping) {
+  constructor (world, mapping) {
     this.mapping = Object.assign({
-      'z': 'up',
+      // Arrows
+      'ArrowUp': 'up',
+      'ArrowDown': 'down',
+      'ArrowRight': 'right',
+      'ArrowLeft': 'left',
+      // WASD
+      'w': 'up',
       'd': 'right',
       's': 'down',
-      'q': 'left',
+      'a': 'left',
+      // Other
+      ' ': 'space',
     }, mapping)
 
     this.pressed = {}
@@ -15,7 +23,7 @@ export default class Keyboard {
     this.updated = false
     this.events = new Events()
 
-    this._fireKeyPressed(ticker)
+    this._fireKeyPressed(world.ticker)
     this._handleKeypress()
   }
 
