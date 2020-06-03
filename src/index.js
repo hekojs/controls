@@ -1,7 +1,7 @@
 import Heko from '@hekojs/core'
 import Keyboard from './Inputs/Keyboard'
 import Components from './Components'
-import Systems from './Systems'
+import Plugin from './Plugin'
 
 Heko.registerComponents(Components)
 
@@ -10,5 +10,5 @@ export default {
     Keyboard
   },
   Components,
-  Systems
+  Plugin
 }
